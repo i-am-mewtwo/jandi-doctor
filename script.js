@@ -151,7 +151,10 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
   btn.textContent = '로그인 중...'; btn.disabled = true;
   setTimeout(() => {
     btn.textContent = '✓ 로그인 성공!';
-    setTimeout(closeModal, 1200);
+    setTimeout(() => {
+      closeModal();
+      if (currentRole === 'buyer') window.location.href = 'dashboard-buyer.html';
+    }, 800);
     btn.textContent = '로그인'; btn.disabled = false;
   }, 1000);
 });
