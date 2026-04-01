@@ -155,6 +155,7 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
       closeModal();
       if (currentRole === 'buyer') window.location.href = 'dashboard-buyer.html';
       else if (currentRole === 'seller') window.location.href = 'dashboard-seller.html';
+      else if (currentRole === 'contractor') window.location.href = 'dashboard-contractor.html';
     }, 800);
     btn.textContent = '로그인'; btn.disabled = false;
   }, 1000);

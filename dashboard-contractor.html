@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>시공사 대시보드 — 잔디박사</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="dashboard-buyer.css" />
+  <link rel="stylesheet" href="dashboard-seller.css" />
+  <link rel="stylesheet" href="dashboard-contractor.css" />
+</head>
+<body>
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-top">
+      <a href="index.html" class="sidebar-logo">
+        <img src="logo.png" alt="잔디박사" />
+        <span>잔디박사</span>
+      </a>
+      <button class="sidebar-close" id="sidebarClose">✕</button>
+    </div>
+
+    <div class="sidebar-user">
+      <div class="user-avatar contractor-avatar">스</div>
+      <div class="user-info">
+        <strong>스포츠잔디코리아</strong>
+        <span class="role-tag contractor">시공사</span>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <button class="nav-item active" data-page="home">
+        <span class="nav-icon">📊</span> 홈
+      </button>
+      <button class="nav-item" data-page="requests">
+        <span class="nav-icon">📥</span> 견적 요청
+        <span class="nav-badge new">4</span>
+      </button>
+      <button class="nav-item" data-page="proposals">
+        <span class="nav-icon">📤</span> 내 제안
+      </button>
+      <button class="nav-item" data-page="construction">
+        <span class="nav-icon">🏗️</span> 시공 관리
+        <span class="nav-badge">3</span>
+      </button>
+      <button class="nav-item" data-page="history">
+        <span class="nav-icon">📁</span> 완료 이력
+      </button>
+      <button class="nav-item" data-page="reviews">
+        <span class="nav-icon">⭐</span> 리뷰 관리
+      </button>
+      <button class="nav-item" data-page="profile">
+        <span class="nav-icon">🔧</span> 업체 정보
+      </button>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <a href="index.html" class="sidebar-link">← 메인으로</a>
+      <button class="sidebar-link logout">로그아웃</button>
+    </div>
+  </aside>
+
+  <!-- ===== MAIN ===== -->
+  <div class="main-wrap">
+
+    <header class="topbar">
+      <button class="menu-btn" id="menuBtn">☰</button>
+      <div class="topbar-title" id="topbarTitle">홈</div>
+      <div class="topbar-actions">
+        <button class="icon-btn">🔔<span class="notif-dot"></span></button>
+        <button class="btn-primary-sm" onclick="switchPage('requests')">견적 요청 확인</button>
+      </div>
+    </header>
+
+    <!-- ===== HOME ===== -->
+    <main class="page active" id="page-home">
+      <div class="page-inner">
+        <div class="welcome-bar">
+          <div>
+            <h1>안녕하세요, 스포츠잔디코리아 👋</h1>
+            <p>새로운 견적 요청 <strong>4건</strong>이 도착했습니다. 현재 시공 현장 <strong>3곳</strong>이 진행 중입니다.</p>
+          </div>
+          <div class="header-kpi">
+            <div class="kpi-chip">이번 달 수주 <strong>₩ 112,000,000</strong></div>
+          </div>
+        </div>
+
+        <div class="stat-grid">
+          <div class="stat-card highlight">
+            <div class="stat-icon blue">📥</div>
+            <div class="stat-body"><span>새 견적 요청</span><strong>4건</strong></div>
+            <span class="stat-new">NEW</span>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon orange">🏗️</div>
+            <div class="stat-body"><span>진행 중 시공</span><strong>3건</strong></div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon green">✅</div>
+            <div class="stat-body"><span>이번 달 완료</span><strong>7건</strong></div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon purple">⭐</div>
+            <div class="stat-body"><span>평균 평점</span><strong>4.8</strong></div>
+          </div>
+        </div>
+
+        <!-- 진행 중 시공 요약 -->
+        <div class="section-block">
+          <div class="section-header">
+            <h2>진행 중 시공 현황</h2>
+            <button class="link-btn" onclick="switchPage('construction')">전체 보기 →</button>
+          </div>
+          <div class="construction-summary-list">
+            <div class="cs-item">
+              <div class="cs-info">
+                <strong>풋살장 인조잔디 시공</strong>
+                <span>서울 성동구 · 300㎡</span>
+              </div>
+              <div class="cs-progress-bar">
+                <div class="cs-bar" style="width:60%"></div>
+              </div>
+              <div class="cs-status-text">시공 중 · 60%</div>
+              <span class="status-badge ing">시공 중</span>
+            </div>
+            <div class="cs-item">
+              <div class="cs-info">
+                <strong>학교 운동장 잔디 교체</strong>
+                <span>경기 수원시 · 1,200㎡</span>
+              </div>
+              <div class="cs-progress-bar">
+                <div class="cs-bar" style="width:20%"></div>
+              </div>
+              <div class="cs-status-text">자재 준비 · 20%</div>
+              <span class="status-badge ing">준비 중</span>
+            </div>
+            <div class="cs-item">
+              <div class="cs-info">
+                <strong>골프장 퍼팅그린 조성</strong>
+                <span>강원 춘천시 · 500㎡</span>
+              </div>
+              <div class="cs-progress-bar">
+                <div class="cs-bar" style="width:85%"></div>
+              </div>
+              <div class="cs-status-text">마무리 작업 · 85%</div>
+              <span class="status-badge done">검수 예정</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 새 견적 요청 -->
+        <div class="section-block">
+          <div class="section-header">
+            <h2>새 견적 요청</h2>
+            <button class="link-btn" onclick="switchPage('requests')">전체 보기 →</button>
+          </div>
+          <div class="request-list">
+            <div class="request-card new-req">
+              <div class="req-top">
+                <div class="req-info">
+                  <div class="req-badge new-badge">신규</div>
+                  <strong>어린이집 놀이터 인조잔디</strong>
+                  <span>서울 마포구 · 150㎡ · 1개월 이내</span>
+                </div>
+                <div class="req-spec-tags">
+                  <span>30mm</span><span>고무칩</span><span>KC 인증</span>
+                </div>
+              </div>
+              <div class="req-bottom">
+                <span class="req-time">🕐 1시간 전</span>
+                <div class="req-actions">
+                  <button class="btn-outline-sm">상세 보기</button>
+                  <button class="btn-primary-sm" onclick="openProposalModal('어린이집 놀이터 인조잔디 · 150㎡')">제안서 작성</button>
+                </div>
+              </div>
+            </div>
+            <div class="request-card new-req">
+              <div class="req-top">
+                <div class="req-info">
+                  <div class="req-badge new-badge">신규</div>
+                  <strong>주택 정원 잔디 설치</strong>
+                  <span>경기 성남시 · 60㎡ · 2개월 이내</span>
+                </div>
+                <div class="req-spec-tags">
+                  <span>25mm</span><span>무충진</span><span>주택 정원</span>
+                </div>
+              </div>
+              <div class="req-bottom">
+                <span class="req-time">🕐 3시간 전</span>
+                <div class="req-actions">
+                  <button class="btn-outline-sm">상세 보기</button>
+                  <button class="btn-primary-sm" onclick="openProposalModal('주택 정원 잔디 설치 · 60㎡')">제안서 작성</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- ===== 견적 요청 ===== -->
+    <main class="page" id="page-requests">
+      <div class="page-inner">
+        <div class="page-header"><h1>견적 요청</h1></div>
+        <div class="tab-filter">
+          <button class="filter-btn active">전체 (9)</button>
+          <button class="filter-btn">신규 (4)</button>
+          <button class="filter-btn">제안 완료 (4)</button>
+          <button class="filter-btn">마감 (1)</button>
+        </div>
+        <div class="request-list full">
+          <div class="request-card new-req">
+            <div class="req-top">
+              <div class="req-info">
+                <div class="req-badge new-badge">신규</div>
+                <strong>어린이집 놀이터 인조잔디</strong>
+                <span>서울 마포구 · 150㎡ · 1개월 이내</span>
+              </div>
+              <div class="req-spec-tags"><span>30mm</span><span>고무칩</span><span>KC 인증</span></div>
+            </div>
+            <div class="req-extra">
+              <div class="req-detail-item"><label>현재 잔디 시공 시기</label><span>2020년 5월 (교체 희망)</span></div>
+              <div class="req-detail-item"><label>추가 요청사항</label><span>아이들 안전을 최우선으로 합니다. KC 인증 필수.</span></div>
+            </div>
+            <div class="req-bottom">
+              <span class="req-time">🕐 1시간 전 · 경쟁 제안 1건</span>
+              <div class="req-actions">
+                <button class="btn-primary-sm" onclick="openProposalModal('어린이집 놀이터 인조잔디 · 150㎡')">제안서 작성</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="request-card new-req">
+            <div class="req-top">
+              <div class="req-info">
+                <div class="req-badge new-badge">신규</div>
+                <strong>주택 정원 잔디 설치</strong>
+                <span>경기 성남시 · 60㎡ · 2개월 이내</span>
+              </div>
+              <div class="req-spec-tags"><span>25mm</span><span>무충진</span><span>주택 정원</span></div>
+            </div>
+            <div class="req-extra">
+              <div class="req-detail-item"><label>현재 잔디 시공 시기</label><span>없음 (신규 설치)</span></div>
+              <div class="req-detail-item"><label>추가 요청사항</label><span>반려동물이 있어 친환경 소재 선호합니다.</span></div>
+            </div>
+            <div class="req-bottom">
+              <span class="req-time">🕐 3시간 전 · 경쟁 제안 0건</span>
+              <div class="req-actions">
+                <button class="btn-primary-sm" onclick="openProposalModal('주택 정원 잔디 설치 · 60㎡')">제안서 작성</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="request-card new-req">
+            <div class="req-top">
+              <div class="req-info">
+                <div class="req-badge new-badge">신규</div>
+                <strong>풋살장 바닥재 교체</strong>
+                <span>인천 남동구 · 450㎡ · 3개월 이내</span>
+              </div>
+              <div class="req-spec-tags"><span>40mm</span><span>고무칩</span><span>FIFA 인증</span></div>
+            </div>
+            <div class="req-extra">
+              <div class="req-detail-item"><label>현재 잔디 시공 시기</label><span>2016년경 (노후화 심각)</span></div>
+              <div class="req-detail-item"><label>추가 요청사항</label><span>기존 잔디 철거 포함 견적 요청. 야간 조명 시설 있음.</span></div>
+            </div>
+            <div class="req-bottom">
+              <span class="req-time">🕐 6시간 전 · 경쟁 제안 3건</span>
+              <div class="req-actions">
+                <button class="btn-primary-sm" onclick="openProposalModal('풋살장 바닥재 교체 · 450㎡')">제안서 작성</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="request-card new-req">
+            <div class="req-top">
+              <div class="req-info">
+                <div class="req-badge new-badge">신규</div>
+                <strong>골프 연습장 그린 조성</strong>
+                <span>부산 해운대구 · 200㎡ · 미정</span>
+              </div>
+              <div class="req-spec-tags"><span>15mm 이하</span><span>무충진</span><span>퍼팅그린</span></div>
+            </div>
+            <div class="req-extra">
+              <div class="req-detail-item"><label>현재 잔디 시공 시기</label><span>없음 (신규)</span></div>
+              <div class="req-detail-item"><label>추가 요청사항</label><span>실내 공간입니다. 롤 형태 납품 가능한 업체 우대.</span></div>
+            </div>
+            <div class="req-bottom">
+              <span class="req-time">🕐 1일 전 · 경쟁 제안 2건</span>
+              <div class="req-actions">
+                <button class="btn-primary-sm" onclick="openProposalModal('골프 연습장 그린 조성 · 200㎡')">제안서 작성</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="request-card">
+            <div class="req-top">
+              <div class="req-info">
+                <div class="req-badge sent-badge">제안 완료</div>
+                <strong>축구장 전면 교체</strong>
+                <span>경기 고양시 · 7,140㎡ · 6개월 이내</span>
+              </div>
+              <div class="req-spec-tags"><span>45mm</span><span>고무칩</span><span>FIFA PRO</span></div>
+            </div>
+            <div class="req-bottom">
+              <span class="req-time">🕐 3일 전 · 경쟁 제안 5건</span>
+              <div class="req-actions">
+                <button class="btn-outline-sm">제안서 보기</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- ===== 내 제안 ===== -->
+    <main class="page" id="page-proposals">
+      <div class="page-inner">
+        <div class="page-header"><h1>내 제안</h1></div>
+        <div class="tab-filter">
+          <button class="filter-btn active">전체 (15)</button>
+          <button class="filter-btn">검토 중 (8)</button>
+          <button class="filter-btn">수락됨 (6)</button>
+          <button class="filter-btn">미채택 (1)</button>
+        </div>
+        <div class="my-proposals">
+          <div class="my-prop-card accepted">
+            <div class="mp-status"><span class="status-badge done">수락됨</span></div>
+            <div class="mp-body">
+              <div class="mp-title-row">
+                <strong>풋살장 인조잔디 시공</strong>
+                <div class="mp-price">₩ 27,300,000</div>
+              </div>
+              <span class="mp-meta">서울 성동구 · 300㎡ · 제안일: 2025. 03. 18</span>
+              <div class="mp-specs"><span>40mm</span><span>고무칩 충진</span><span>FIFA 인증</span><span>철거 포함</span><span>2년 AS</span></div>
+            </div>
+            <div class="mp-footer">
+              <span class="mp-note accepted-note">✓ 계약 체결 완료</span>
+              <button class="btn-outline-sm" onclick="switchPage('construction')">시공 관리 →</button>
+            </div>
+          </div>
+
+          <div class="my-prop-card accepted">
+            <div class="mp-status"><span class="status-badge done">수락됨</span></div>
+            <div class="mp-body">
+              <div class="mp-title-row">
+                <strong>학교 운동장 잔디 교체</strong>
+                <div class="mp-price">₩ 84,000,000</div>
+              </div>
+              <span class="mp-meta">경기 수원시 · 1,200㎡ · 제안일: 2025. 03. 10</span>
+              <div class="mp-specs"><span>40mm</span><span>고무칩 충진</span><span>KFA 인증</span><span>철거 포함</span><span>3년 AS</span></div>
+            </div>
+            <div class="mp-footer">
+              <span class="mp-note accepted-note">✓ 시공 진행 중</span>
+              <button class="btn-outline-sm" onclick="switchPage('construction')">시공 관리 →</button>
+            </div>
+          </div>
+
+          <div class="my-prop-card">
+            <div class="mp-status"><span class="status-badge ing">검토 중</span></div>
+            <div class="mp-body">
+              <div class="mp-title-row">
+                <strong>축구장 전면 교체</strong>
+                <div class="mp-price">₩ 428,400,000</div>
+              </div>
+              <span class="mp-meta">경기 고양시 · 7,140㎡ · 제안일: 2025. 03. 23</span>
+              <div class="mp-specs"><span>45mm</span><span>고무칩 충진</span><span>FIFA PRO</span><span>철거 포함</span><span>3년 AS</span></div>
+            </div>
+            <div class="mp-footer">
+              <span class="mp-note">구매자가 5개 제안을 비교 중입니다</span>
+              <button class="btn-outline-sm">제안서 보기</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- ===== 시공 관리 ===== -->
+    <main class="page" id="page-construction">
+      <div class="page-inner">
+        <div class="page-header"><h1>시공 관리</h1></div>
+
+        <!-- 현장 1 -->
+        <div class="construction-card">
+          <div class="con-header">
+            <div>
+              <h3>풋살장 인조잔디 시공</h3>
+              <span class="con-meta">서울 성동구 성수동 · 300㎡ · 담당: 김현장 팀장</span>
+            </div>
+            <span class="status-badge ing">시공 중</span>
+          </div>
+
+          <div class="con-info-grid">
+            <div class="con-info-item"><span>계약 금액</span><strong>₩ 27,300,000</strong></div>
+            <div class="con-info-item"><span>계약일</span><strong>2025. 03. 25</strong></div>
+            <div class="con-info-item"><span>시작일</span><strong>2025. 04. 01</strong></div>
+            <div class="con-info-item"><span>완료 예정</span><strong>2025. 04. 08</strong></div>
+          </div>
+
+          <div class="stepper">
+            <div class="step-item done">
+              <div class="step-circle">✓</div>
+              <div class="step-body"><strong>계약 체결</strong><span>2025. 03. 25</span></div>
+            </div>
+            <div class="step-line done"></div>
+            <div class="step-item done">
+              <div class="step-circle">✓</div>
+              <div class="step-body"><strong>기존 잔디 철거</strong><span>2025. 04. 01</span></div>
+            </div>
+            <div class="step-line done"></div>
+            <div class="step-item active">
+              <div class="step-circle pulse">3</div>
+              <div class="step-body">
+                <strong>인조잔디 시공</strong>
+                <span>2025. 04. 02 ~ 진행 중</span>
+                <p class="step-note">현재 잔디 포설 작업 60% 완료. 충진재 작업 예정.</p>
+              </div>
+            </div>
+            <div class="step-line"></div>
+            <div class="step-item">
+              <div class="step-circle">4</div>
+              <div class="step-body"><strong>완료 및 검수</strong><span>예정: 2025. 04. 07</span></div>
+            </div>
+            <div class="step-line"></div>
+            <div class="step-item">
+              <div class="step-circle">5</div>
+              <div class="step-body"><strong>고객 인도</strong><span>예정: 2025. 04. 08</span></div>
+            </div>
+          </div>
+
+          <div class="con-actions">
+            <button class="btn-outline-sm">시공 일지 작성</button>
+            <button class="btn-outline-sm">사진 업로드</button>
+            <button class="btn-primary-sm" onclick="updateStep(this, '다음 단계로 진행')">다음 단계로 진행 →</button>
+          </div>
+        </div>
+
+        <!-- 현장 2 -->
+        <div class="construction-card">
+          <div class="con-header">
+            <div>
+              <h3>학교 운동장 잔디 교체</h3>
+              <span class="con-meta">경기 수원시 팔달구 · 1,200㎡ · 담당: 박공사 팀장</span>
+            </div>
+            <span class="status-badge ing">준비 중</span>
+          </div>
+
+          <div class="con-info-grid">
+            <div class="con-info-item"><span>계약 금액</span><strong>₩ 84,000,000</strong></div>
+            <div class="con-info-item"><span>계약일</span><strong>2025. 03. 20</strong></div>
+            <div class="con-info-item"><span>시작일</span><strong>2025. 04. 15</strong></div>
+            <div class="con-info-item"><span>완료 예정</span><strong>2025. 05. 10</strong></div>
+          </div>
+
+          <div class="stepper">
+            <div class="step-item done">
+              <div class="step-circle">✓</div>
+              <div class="step-body"><strong>계약 체결</strong><span>2025. 03. 20</span></div>
+            </div>
+            <div class="step-line done"></div>
+            <div class="step-item active">
+              <div class="step-circle pulse">2</div>
+              <div class="step-body">
+                <strong>자재 준비 중</strong>
+                <span>2025. 04. 01 ~ 진행 중</span>
+                <p class="step-note">KFA 인증 자재 입고 대기 중. 예정일: 04. 12</p>
+              </div>
+            </div>
+            <div class="step-line"></div>
+            <div class="step-item">
+              <div class="step-circle">3</div>
+              <div class="step-body"><strong>기존 잔디 철거</strong><span>예정: 2025. 04. 15</span></div>
+            </div>
+            <div class="step-line"></div>
+            <div class="step-item">
+              <div class="step-circle">4</div>
+              <div class="step-body"><strong>인조잔디 시공</strong><span>예정: 2025. 04. 18</span></div>
+            </div>
+            <div class="step-line"></div>
+            <div class="step-item">
+              <div class="step-circle">5</div>
+              <div class="step-body"><strong>완료 및 고객 인도</strong><span>예정: 2025. 05. 10</span></div>
+            </div>
+          </div>
+
+          <div class="con-actions">
+            <button class="btn-outline-sm">시공 일지 작성</button>
+            <button class="btn-outline-sm">사진 업로드</button>
+            <button class="btn-primary-sm" onclick="updateStep(this, '다음 단계로 진행')">다음 단계로 진행 →</button>
+          </div>
+        </div>
+
+        <!-- 현장 3 -->
+        <div class="construction-card">
+          <div class="con-header">
+            <div>
+              <h3>골프장 퍼팅그린 조성</h3>
+              <span class="con-meta">강원 춘천시 · 500㎡ · 담당: 이공사 대리</span>
+            </div>
+            <span class="status-badge done">검수 예정</span>
+          </div>
+
+          <div class="con-info-grid">
+            <div class="con-info-item"><span>계약 금액</span><strong>₩ 35,000,000</strong></div>
+            <div class="con-info-item"><span>계약일</span><strong>2025. 03. 05</strong></div>
+            <div class="con-info-item"><span>시작일</span><strong>2025. 03. 15</strong></div>
+            <div class="con-info-item"><span>완료 예정</span><strong>2025. 04. 05</strong></div>
+          </div>
+
+          <div class="stepper">
+            <div class="step-item done"><div class="step-circle">✓</div><div class="step-body"><strong>계약 체결</strong><span>2025. 03. 05</span></div></div>
+            <div class="step-line done"></div>
+            <div class="step-item done"><div class="step-circle">✓</div><div class="step-body"><strong>자재 준비 완료</strong><span>2025. 03. 12</span></div></div>
+            <div class="step-line done"></div>
+            <div class="step-item done"><div class="step-circle">✓</div><div class="step-body"><strong>인조잔디 시공 완료</strong><span>2025. 04. 02</span></div></div>
+            <div class="step-line done"></div>
+            <div class="step-item active">
+              <div class="step-circle pulse">4</div>
+              <div class="step-body">
+                <strong>마무리 및 검수 요청</strong>
+                <span>2025. 04. 03 ~ 진행 중</span>
+                <p class="step-note">고객 검수 일정 협의 중입니다. 연락 대기 중.</p>
+              </div>
+            </div>
+            <div class="step-line"></div>
+            <div class="step-item"><div class="step-circle">5</div><div class="step-body"><strong>고객 인도</strong><span>예정: 2025. 04. 05</span></div></div>
+          </div>
+
+          <div class="con-actions">
+            <button class="btn-outline-sm">시공 일지 보기</button>
+            <button class="btn-primary-sm">검수 완료 처리</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- ===== 완료 이력 ===== -->
+    <main class="page" id="page-history">
+      <div class="page-inner">
+        <div class="page-header">
+          <h1>완료 이력</h1>
+          <div class="history-total">총 <strong>211건</strong> 완료</div>
+        </div>
+
+        <div class="history-grid">
+          <div class="history-card">
+            <div class="history-img">
+              <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=500&q=80&fit=crop" alt="시공 사례" />
+              <span class="history-cat">축구/풋살장</span>
+            </div>
+            <div class="history-body">
+              <h3>풋살파크 A구장 전면 교체</h3>
+              <div class="history-meta">서울 강남구 · 450㎡ · 2025. 02</div>
+              <div class="history-specs"><span>40mm</span><span>고무칩</span><span>FIFA 인증</span></div>
+              <div class="history-review">
+                <span class="stars-sm">★★★★★</span>
+                <span class="review-quote">"시공 퀄리티가 매우 우수합니다."</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="history-card">
+            <div class="history-img">
+              <img src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=500&q=80&fit=crop" alt="시공 사례" />
+              <span class="history-cat">골프 그린</span>
+            </div>
+            <div class="history-body">
+              <h3>리조트 골프 퍼팅그린</h3>
+              <div class="history-meta">강원 평창군 · 300㎡ · 2025. 01</div>
+              <div class="history-specs"><span>15mm</span><span>무충진</span><span>고급형</span></div>
+              <div class="history-review">
+                <span class="stars-sm">★★★★★</span>
+                <span class="review-quote">"고급스럽고 완성도가 높아요."</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="history-card">
+            <div class="history-img">
+              <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=80&fit=crop" alt="시공 사례" />
+              <span class="history-cat">학교 운동장</span>
+            </div>
+            <div class="history-body">
+              <h3>○○초등학교 운동장</h3>
+              <div class="history-meta">경기 용인시 · 2,400㎡ · 2024. 11</div>
+              <div class="history-specs"><span>35mm</span><span>고무칩</span><span>KFA 인증</span></div>
+              <div class="history-review">
+                <span class="stars-sm">★★★★☆</span>
+                <span class="review-quote">"꼼꼼하고 빠른 시공이었습니다."</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="history-card">
+            <div class="history-img">
+              <img src="https://images.unsplash.com/photo-1551958219-acbc595d2e42?w=500&q=80&fit=crop" alt="시공 사례" />
+              <span class="history-cat">어린이 놀이터</span>
+            </div>
+            <div class="history-body">
+              <h3>어린이집 놀이공간 조성</h3>
+              <div class="history-meta">서울 송파구 · 120㎡ · 2024. 10</div>
+              <div class="history-specs"><span>30mm</span><span>고무칩</span><span>KC 인증</span></div>
+              <div class="history-review">
+                <span class="stars-sm">★★★★★</span>
+                <span class="review-quote">"안전하고 완벽한 시공 감사해요."</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- ===== 리뷰 관리 ===== -->
+    <main class="page" id="page-reviews">
+      <div class="page-inner">
+        <div class="page-header"><h1>리뷰 관리</h1></div>
+
+        <div class="review-summary-bar">
+          <div class="rs-score">
+            <strong>4.8</strong>
+            <div class="rs-stars">★★★★★</div>
+            <span>전체 211개</span>
+          </div>
+          <div class="rs-breakdown">
+            <div class="rb-row"><span>잔디 품질</span><div class="rb-bar-wrap"><div class="rb-bar" style="width:94%"></div></div><strong>4.7</strong></div>
+            <div class="rb-row"><span>시공 품질</span><div class="rb-bar-wrap"><div class="rb-bar" style="width:98%"></div></div><strong>4.9</strong></div>
+            <div class="rb-row"><span>사후관리</span><div class="rb-bar-wrap"><div class="rb-bar" style="width:96%"></div></div><strong>4.8</strong></div>
+          </div>
+        </div>
+
+        <div class="review-list">
+          <div class="review-item">
+            <div class="ri-header">
+              <div class="ri-user">
+                <div class="ri-avatar">김</div>
+                <div><strong>김민준</strong><span>풋살장 300㎡ · 2025. 03. 30</span></div>
+              </div>
+              <div class="ri-scores">
+                <span>잔디 ⭐5.0</span><span>시공 ⭐5.0</span><span>관리 ⭐5.0</span>
+              </div>
+            </div>
+            <p class="ri-text">"정말 꼼꼼하고 빠른 시공이었습니다. AS도 빠르게 해주셔서 매우 만족합니다."</p>
+            <div class="ri-reply">
+              <strong>사장님 답변</strong>
+              <p>좋은 리뷰 감사합니다! 앞으로도 잘 부탁드립니다 😊</p>
+            </div>
+          </div>
+
+          <div class="review-item">
+            <div class="ri-header">
+              <div class="ri-user">
+                <div class="ri-avatar">이</div>
+                <div><strong>이수연</strong><span>주택 정원 80㎡ · 2025. 03. 22</span></div>
+              </div>
+              <div class="ri-scores">
+                <span>잔디 ⭐4.0</span><span>시공 ⭐5.0</span><span>관리 ⭐5.0</span>
+              </div>
+            </div>
+            <p class="ri-text">"시공팀이 친절하고 깔끔했습니다. 만족스럽습니다."</p>
+            <button class="reply-btn" onclick="openReplyModal(this)">답변 달기</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- ===== 업체 정보 ===== -->
+    <main class="page" id="page-profile">
+      <div class="page-inner">
+        <div class="page-header">
+          <h1>업체 정보</h1>
+          <button class="btn-outline-sm" onclick="toggleEdit()">수정하기</button>
+        </div>
+
+        <div class="profile-card">
+          <div class="biz-profile-header">
+            <div class="biz-avatar contractor-biz-avatar">스</div>
+            <div>
+              <h2>스포츠잔디코리아</h2>
+              <div class="biz-badges">
+                <span class="biz-badge verified">✓ 사업자 인증</span>
+                <span class="biz-badge cert">FIFA PRO 파트너</span>
+                <span class="biz-badge cert">KFA 인증</span>
+                <span class="biz-badge cert">KC 인증</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="profile-fields" id="profileFields">
+            <div class="field-row"><label>상호명</label><span class="field-val">스포츠잔디코리아(주)</span><input class="field-input hidden" type="text" value="스포츠잔디코리아(주)" /></div>
+            <div class="field-row"><label>사업자번호</label><span class="field-val">456-78-90123</span><input class="field-input hidden" type="text" value="456-78-90123" /></div>
+            <div class="field-row"><label>담당자</label><span class="field-val">최대표 대표이사</span><input class="field-input hidden" type="text" value="최대표 대표이사" /></div>
+            <div class="field-row"><label>연락처</label><span class="field-val">031-987-6543</span><input class="field-input hidden" type="tel" value="031-987-6543" /></div>
+            <div class="field-row"><label>이메일</label><span class="field-val">info@sportsjandi.kr</span><input class="field-input hidden" type="email" value="info@sportsjandi.kr" /></div>
+            <div class="field-row"><label>활동 지역</label><span class="field-val">전국</span><input class="field-input hidden" type="text" value="전국" /></div>
+            <div class="field-row"><label>업력</label><span class="field-val">창업 15년 (2010년 설립)</span><input class="field-input hidden" type="text" value="창업 15년 (2010년 설립)" /></div>
+            <div class="field-row"><label>소개글</label><span class="field-val">15년 이상 인조잔디 전문 시공. FIFA PRO·KFA·KC 인증 보유. 전국 현장 직시공.</span><textarea class="field-input hidden" rows="3">15년 이상 인조잔디 전문 시공. FIFA PRO·KFA·KC 인증 보유. 전국 현장 직시공.</textarea></div>
+          </div>
+          <button class="btn-primary hidden" id="saveProfileBtn" onclick="saveProfile()">저장하기</button>
+        </div>
+
+        <!-- 인증 현황 -->
+        <div class="section-block">
+          <h2 class="section-sub">🏅 보유 인증</h2>
+          <div class="cert-grid">
+            <div class="cert-card active">
+              <div class="cert-icon">🏆</div>
+              <strong>FIFA PRO</strong>
+              <span>만료: 2026. 06</span>
+              <div class="cert-status on">유효</div>
+            </div>
+            <div class="cert-card active">
+              <div class="cert-icon">⚽</div>
+              <strong>KFA 공인</strong>
+              <span>만료: 2025. 12</span>
+              <div class="cert-status on">유효</div>
+            </div>
+            <div class="cert-card active">
+              <div class="cert-icon">🛡️</div>
+              <strong>KC 안전인증</strong>
+              <span>만료: 2026. 03</span>
+              <div class="cert-status on">유효</div>
+            </div>
+            <div class="cert-card">
+              <div class="cert-icon">➕</div>
+              <strong>인증 추가</strong>
+              <span>인증서 등록</span>
+              <div class="cert-status add">등록</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- ===== 제안서 작성 모달 ===== -->
+  <div class="modal-backdrop" id="proposalModal">
+    <div class="modal wide-modal">
+      <button class="modal-close" onclick="closeProposalModal()">✕</button>
+      <h2>제안서 작성</h2>
+      <p class="modal-desc" id="proposalTarget"></p>
+      <form id="proposalForm" onsubmit="submitProposal(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label>시공 단가 (원/㎡)</label>
+            <input type="number" placeholder="예: 91000" required />
+          </div>
+          <div class="form-group">
+            <label>총 견적 금액 (원)</label>
+            <input type="number" placeholder="자동 계산" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>시공 가능 시기</label>
+            <select><option>1주 이내</option><option>2주 이내</option><option>3주 이내</option><option>1개월 이내</option></select>
+          </div>
+          <div class="form-group">
+            <label>예상 시공 기간</label>
+            <select><option>3일</option><option>1주</option><option>2주</option><option>3주</option><option>1개월</option></select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>AS 보증 기간</label>
+            <select><option>1년</option><option>2년</option><option>3년</option></select>
+          </div>
+          <div class="form-group">
+            <label>기존 잔디 철거</label>
+            <select><option>포함</option><option>별도 견적</option><option>해당 없음</option></select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>제안 메시지</label>
+          <textarea rows="4" placeholder="시공 경험, 강점, 특이사항 등을 자유롭게 작성해 주세요."></textarea>
+        </div>
+        <div class="form-row">
+          <button type="button" class="btn-outline-sm" onclick="closeProposalModal()">취소</button>
+          <button type="submit" class="btn-primary">제안서 제출</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ===== 리뷰 답변 모달 ===== -->
+  <div class="modal-backdrop" id="replyModal">
+    <div class="modal">
+      <button class="modal-close" onclick="closeReplyModal()">✕</button>
+      <h2>답변 달기</h2>
+      <form id="replyForm" onsubmit="submitReply(event)">
+        <div class="form-group">
+          <label>답변 내용</label>
+          <textarea rows="4" placeholder="고객 리뷰에 감사 인사나 추가 안내를 남겨주세요."></textarea>
+        </div>
+        <button type="submit" class="btn-primary btn-full">답변 등록</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="dashboard-contractor.js"></script>
+</body>
+</html>
