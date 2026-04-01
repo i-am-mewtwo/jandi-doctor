@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>잔디박사 — 인조잔디 전문 플랫폼</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header id="header">
+    <div class="container header-inner">
+      <a href="#" class="logo">
+        <img src="logo.png" alt="잔디박사" class="logo-img" />
+        <span class="logo-text">잔디박사</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#how">이용방법</a>
+        <a href="#features">주요기능</a>
+        <a href="#reviews">리뷰</a>
+        <a href="#partners">파트너사</a>
+      </nav>
+      <div class="header-actions">
+        <button class="btn-ghost" id="btnLogin">로그인</button>
+        <a href="#quote" class="btn-primary">견적 요청하기</a>
+      </div>
+      <button class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-bg">
+      <img
+        src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1800&q=90&fit=crop&crop=center"
+        alt="인조잔디 축구장"
+        class="hero-img"
+      />
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="container hero-content">
+      <div class="hero-badge">대한민국 No.1 인조잔디 플랫폼</div>
+      <h1 class="hero-title">
+        인조잔디, 이제<br />
+        <span class="highlight">투명하게</span> 거래하세요
+      </h1>
+      <p class="hero-desc">
+        구매자 · 판매자 · 시공사가 한곳에서 만납니다.<br />
+        가격 비교, 전문가 견적, 검증된 리뷰까지 — 잔디박사가 함께합니다.
+      </p>
+      <div class="hero-actions">
+        <a href="#quote" class="btn-primary btn-lg">무료 견적 요청</a>
+        <a href="#how" class="btn-outline btn-lg">서비스 알아보기</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <strong>2,400+</strong>
+          <span>등록 시공사</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <strong>18,000+</strong>
+          <span>완료 프로젝트</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <strong>4.8★</strong>
+          <span>평균 만족도</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== USER TYPES ===== -->
+  <section class="user-types" id="types">
+    <div class="container">
+      <div class="section-label">누구를 위한 서비스인가요?</div>
+      <h2 class="section-title">잔디박사는 모두를 위한 플랫폼입니다</h2>
+      <div class="type-cards">
+        <div class="type-card buyer">
+          <div class="type-icon">🏠</div>
+          <div class="type-tag">구매자</div>
+          <h3>합리적인 가격으로<br />믿을 수 있는 잔디를</h3>
+          <p>면적, 용도, 예산을 입력하면 검증된 시공사에서 견적을 받을 수 있어요. 가격 비교와 리뷰로 현명하게 선택하세요.</p>
+          <ul class="type-list">
+            <li>✓ 맞춤 견적 자동 비교</li>
+            <li>✓ 시공사 리뷰 확인</li>
+            <li>✓ 하자보수 이력 투명 공개</li>
+          </ul>
+          <a href="#quote" class="type-cta">견적 요청하기 →</a>
+        </div>
+        <div class="type-card seller">
+          <div class="type-icon">🏢</div>
+          <div class="type-tag">판매자 · 시공사</div>
+          <h3>검증된 고객을<br />직접 만나세요</h3>
+          <p>준비된 구매자와 연결됩니다. 견적 요청을 받고 제안서를 제출하세요. 누적 실적으로 신뢰를 쌓아가세요.</p>
+          <ul class="type-list">
+            <li>✓ 맞춤 견적 요청 수신</li>
+            <li>✓ 포트폴리오 & 인증 등록</li>
+            <li>✓ 실적 기반 노출 우대</li>
+          </ul>
+          <a href="#partner" class="type-cta">파트너 등록하기 →</a>
+        </div>
+        <div class="type-card manager">
+          <div class="type-icon">🔧</div>
+          <div class="type-tag">관리 · 하자보수</div>
+          <h3>사후관리까지<br />책임집니다</h3>
+          <p>시공 후 관리, 하자보수, 교체 주기 알림까지. 잔디박사가 라이프사이클 전체를 추적하고 관리합니다.</p>
+          <ul class="type-list">
+            <li>✓ 하자보수 요청 & 처리</li>
+            <li>✓ 교체 주기 자동 알림</li>
+            <li>✓ 관리 이력 기록 보관</li>
+          </ul>
+          <a href="#" class="type-cta">관리 서비스 보기 →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section class="how" id="how">
+    <div class="container">
+      <div class="section-label">프로세스</div>
+      <h2 class="section-title">견적부터 사후관리까지<br />4단계로 끝납니다</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">01</div>
+          <div class="step-content">
+            <h3>견적 요청</h3>
+            <p>면적, 목적, 선호 잔디 사양(파일 높이·밀도·충진재 여부), 시공 희망 시기를 입력해요.</p>
+            <div class="step-tags">
+              <span>면적 입력</span><span>mm 선택</span><span>충진재</span><span>시공 시기</span>
+            </div>
+          </div>
+          <div class="step-arrow">→</div>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <div class="step-content">
+            <h3>시공사 제안</h3>
+            <p>조건에 맞는 시공사들이 상품 및 견적서를 제출합니다. 복수의 제안을 동시에 비교할 수 있어요.</p>
+            <div class="step-tags">
+              <span>상품 제안</span><span>견적서 비교</span><span>시공사 인증</span>
+            </div>
+          </div>
+          <div class="step-arrow">→</div>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <div class="step-content">
+            <h3>계약 & 시공</h3>
+            <p>마음에 드는 제안을 선택하고 안전하게 계약하세요. 시공 과정은 플랫폼에서 실시간 추적됩니다.</p>
+            <div class="step-tags">
+              <span>안전 계약</span><span>시공 추적</span><span>단계별 확인</span>
+            </div>
+          </div>
+          <div class="step-arrow">→</div>
+        </div>
+        <div class="step">
+          <div class="step-num">04</div>
+          <div class="step-content">
+            <h3>리뷰 & 사후관리</h3>
+            <p>잔디 품질, 시공 퀄리티, 사후관리를 각각 평가해요. 누적 리뷰가 시장의 신뢰를 만듭니다.</p>
+            <div class="step-tags">
+              <span>잔디 리뷰</span><span>시공 리뷰</span><span>관리 리뷰</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== QUOTE FORM ===== -->
+  <section class="quote-section" id="quote">
+    <div class="container">
+      <div class="quote-inner">
+        <div class="quote-info">
+          <div class="section-label">무료 견적</div>
+          <h2>지금 바로<br />견적을 요청하세요</h2>
+          <p>평균 <strong>3개</strong>의 견적서를<br /><strong>24시간 이내</strong>에 받으실 수 있습니다.</p>
+          <div class="quote-features">
+            <div class="qf"><span>✓</span> 완전 무료</div>
+            <div class="qf"><span>✓</span> 비용 부담 없음</div>
+            <div class="qf"><span>✓</span> 검증된 파트너사만</div>
+          </div>
+        </div>
+        <form class="quote-form" id="quoteForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label>이름</label>
+              <input type="text" placeholder="홍길동" />
+            </div>
+            <div class="form-group">
+              <label>연락처</label>
+              <input type="tel" placeholder="010-0000-0000" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>시공 주소</label>
+            <input type="text" placeholder="예: 서울시 강남구 테헤란로 123" />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>시공 면적 (㎡)</label>
+              <input type="number" placeholder="예: 200" />
+            </div>
+            <div class="form-group">
+              <label>주요 목적</label>
+              <select>
+                <option value="">선택해 주세요</option>
+                <option>축구장 / 풋살장</option>
+                <option>골프 퍼팅그린</option>
+                <option>어린이 놀이터</option>
+                <option>주택 정원</option>
+                <option>학교 운동장</option>
+                <option>상업공간 조경</option>
+                <option>기타</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>파일 높이 (mm)</label>
+              <select>
+                <option value="">무관</option>
+                <option>20mm 이하</option>
+                <option>25~30mm</option>
+                <option>35~40mm</option>
+                <option>45mm 이상</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>충진재</label>
+              <select>
+                <option value="">무관</option>
+                <option>고무칩 충진</option>
+                <option>규사 충진</option>
+                <option>무충진</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>시공 희망 시기</label>
+            <select>
+              <option value="">선택해 주세요</option>
+              <option>1개월 이내</option>
+              <option>1~3개월</option>
+              <option>3~6개월</option>
+              <option>미정</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>현재 잔디 시공 시기 <span class="label-optional">(있는 경우)</span></label>
+            <input type="text" placeholder="예: 2021년 3월, 약 4년 전, 모름 등 자유롭게 입력" />
+          </div>
+          <div class="form-group">
+            <label>추가 요청사항</label>
+            <textarea rows="3" placeholder="기타 요구사항이나 궁금한 점을 적어주세요."></textarea>
+          </div>
+          <button type="submit" class="btn-primary btn-lg btn-full">무료 견적 요청하기</button>
+          <p class="form-notice">개인정보는 견적 제공 목적으로만 사용되며, 제3자에게 제공되지 않습니다.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURES ===== -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-label">핵심 기능</div>
+      <h2 class="section-title">왜 잔디박사인가요?</h2>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3>가격 투명성</h3>
+          <p>동일 사양의 인조잔디 시세가 공개됩니다. 바가지 없이, 합리적인 가격으로 거래하세요.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⭐</div>
+          <h3>3중 리뷰 시스템</h3>
+          <p>잔디 품질, 시공 퀄리티, 사후관리를 독립적으로 평가. 어떤 단계도 숨길 수 없습니다.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🛡️</div>
+          <h3>인증 시공사만</h3>
+          <p>등록 전 사업자 등록, 시공 실적, 보험 가입 여부를 검증합니다. 검증된 파트너만 활동합니다.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📍</div>
+          <h3>시공 이력 추적</h3>
+          <p>어디에, 언제, 누가 시공했는지 기록됩니다. 하자 발생 시 책임 소재가 명확합니다.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔔</div>
+          <h3>수명 알림 서비스</h3>
+          <p>시공일 기준으로 교체 권장 시기를 자동 알림. 적시에 관리받고 비용을 절감하세요.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💬</div>
+          <h3>전문가 Q&A</h3>
+          <p>잔디 선택, 관리 방법, 하자 대응 등 인조잔디 전문가에게 직접 물어보세요.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRODUCT SPEC ===== -->
+  <section class="product-spec">
+    <div class="container">
+      <div class="spec-inner">
+        <div class="spec-text">
+          <div class="section-label">상품 비교</div>
+          <h2>내게 맞는 잔디를<br />쉽게 찾을 수 있어요</h2>
+          <p>파일 높이, 밀도, 충진재 유무, 주요 용도별로 필터링하고 실제 시공 사례와 리뷰를 함께 확인하세요.</p>
+          <div class="spec-list">
+            <div class="spec-item">
+              <div class="spec-dot"></div>
+              <div>
+                <strong>파일 높이</strong>
+                <span>20mm ~ 60mm · 용도별 최적 높이 추천</span>
+              </div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-dot"></div>
+              <div>
+                <strong>밀도 (Dtex)</strong>
+                <span>파일 굵기와 촘촘함 비교</span>
+              </div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-dot"></div>
+              <div>
+                <strong>충진재</strong>
+                <span>고무칩 · 규사 · 무충진 선택</span>
+              </div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-dot"></div>
+              <div>
+                <strong>인증 등급</strong>
+                <span>FIFA · KFA · KC 인증 여부 표시</span>
+              </div>
+            </div>
+          </div>
+          <a href="#" class="btn-primary">상품 둘러보기</a>
+        </div>
+        <div class="spec-visual">
+          <img
+            src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=700&q=85&fit=crop"
+            alt="인조잔디 클로즈업"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== REVIEWS ===== -->
+  <section class="reviews" id="reviews">
+    <div class="container">
+      <div class="section-label">이용자 리뷰</div>
+      <h2 class="section-title">실제 이용자들의<br />생생한 후기</h2>
+      <div class="review-grid">
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar">김</div>
+            <div>
+              <strong>김민준</strong>
+              <span>축구장 시공 · 서울</span>
+            </div>
+            <div class="review-stars">★★★★★</div>
+          </div>
+          <div class="review-badges">
+            <span class="badge">잔디 품질 5.0</span>
+            <span class="badge">시공 5.0</span>
+            <span class="badge">사후관리 4.8</span>
+          </div>
+          <p>"3개 업체 견적을 받아보고 선택했는데 가격도 저렴하고 시공 퀄리티도 훌륭했습니다. 리뷰가 투명하게 공개되어 있어서 믿을 수 있었어요."</p>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar">이</div>
+            <div>
+              <strong>이수연</strong>
+              <span>주택 정원 · 경기도</span>
+            </div>
+            <div class="review-stars">★★★★★</div>
+          </div>
+          <div class="review-badges">
+            <span class="badge">잔디 품질 4.9</span>
+            <span class="badge">시공 5.0</span>
+            <span class="badge">사후관리 5.0</span>
+          </div>
+          <p>"견적 요청하고 24시간 안에 2개 제안이 왔어요. 가격이 투명하게 공개되어 있어서 바가지 걱정 없이 합리적으로 결정할 수 있었습니다."</p>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar">박</div>
+            <div>
+              <strong>박성호</strong>
+              <span>어린이집 놀이터 · 부산</span>
+            </div>
+            <div class="review-stars">★★★★☆</div>
+          </div>
+          <div class="review-badges">
+            <span class="badge">잔디 품질 4.7</span>
+            <span class="badge">시공 4.8</span>
+            <span class="badge">사후관리 4.5</span>
+          </div>
+          <p>"KC 인증 제품 여부까지 확인할 수 있어서 아이들 안전 걱정 없이 선택했습니다. 하자보수 이력도 공개되어 있어 신뢰가 갔어요."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PARTNER CTA ===== -->
+  <section class="partner-cta" id="partner">
+    <div class="container">
+      <div class="partner-inner">
+        <div class="partner-text">
+          <div class="section-label white-label">파트너 모집</div>
+          <h2>시공사 · 판매사라면<br />지금 등록하세요</h2>
+          <p>검증된 구매자와 직접 연결됩니다. 광고비 없이, 실적으로 신뢰를 쌓으세요.</p>
+          <a href="#" class="btn-white btn-lg">파트너 등록 신청</a>
+        </div>
+        <div class="partner-benefits">
+          <div class="benefit">
+            <div class="benefit-num">01</div>
+            <div>
+              <strong>선별된 견적 요청 수신</strong>
+              <p>내 전문 분야와 지역에 맞는 요청만 받습니다</p>
+            </div>
+          </div>
+          <div class="benefit">
+            <div class="benefit-num">02</div>
+            <div>
+              <strong>인증 배지로 신뢰 확보</strong>
+              <p>사업자 · 실적 · 보험 인증으로 고객 신뢰를 높이세요</p>
+            </div>
+          </div>
+          <div class="benefit">
+            <div class="benefit-num">03</div>
+            <div>
+              <strong>누적 리뷰로 장기 성장</strong>
+              <p>리뷰가 쌓일수록 노출 우선순위가 높아집니다</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TRUST BANNER ===== -->
+  <section class="trust-banner">
+    <div class="container">
+      <div class="trust-inner">
+        <div class="trust-item">
+          <strong>2,400+</strong>
+          <span>검증된 파트너사</span>
+        </div>
+        <div class="trust-item">
+          <strong>18,000+</strong>
+          <span>완료 프로젝트</span>
+        </div>
+        <div class="trust-item">
+          <strong>96%</strong>
+          <span>재이용 의향률</span>
+        </div>
+        <div class="trust-item">
+          <strong>24시간</strong>
+          <span>평균 견적 수신 시간</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="logo">
+            <img src="logo.png" alt="잔디박사" class="logo-img" />
+            <span class="logo-text">잔디박사</span>
+          </div>
+          <p>인조잔디 시장의 투명한 거래를 만듭니다.<br />구매자, 판매자, 시공사 모두를 위한 플랫폼.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>서비스</h4>
+            <a href="#">견적 요청</a>
+            <a href="#">상품 비교</a>
+            <a href="#">시공사 찾기</a>
+            <a href="#">관리 서비스</a>
+          </div>
+          <div class="footer-col">
+            <h4>파트너</h4>
+            <a href="#">파트너 등록</a>
+            <a href="#">인증 안내</a>
+            <a href="#">파트너 센터</a>
+          </div>
+          <div class="footer-col">
+            <h4>회사</h4>
+            <a href="#">서비스 소개</a>
+            <a href="#">공지사항</a>
+            <a href="#">고객센터</a>
+            <a href="#">이용약관</a>
+            <a href="#">개인정보처리방침</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 잔디박사. All rights reserved.</p>
+        <p class="footer-legal">사업자등록번호: 000-00-00000 | 통신판매업신고: 제0000-서울강남-0000호</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== LOGIN MODAL ===== -->
+  <div class="modal-backdrop" id="loginModal" role="dialog" aria-modal="true" aria-label="로그인">
+    <div class="modal">
+      <button class="modal-close" id="modalClose" aria-label="닫기">✕</button>
+
+      <!-- 유형 선택 -->
+      <div class="modal-select" id="modalSelect">
+        <div class="modal-logo">
+          <img src="logo.png" alt="잔디박사" />
+          <span>잔디박사</span>
+        </div>
+        <h2>어떤 유형으로<br/>로그인하시겠어요?</h2>
+        <p>계정 유형에 맞는 대시보드로 연결됩니다.</p>
+        <div class="login-type-btns">
+          <button class="login-type-btn" data-role="seller">
+            <div class="lt-icon">🏢</div>
+            <div class="lt-text">
+              <strong>판매자</strong>
+              <span>상품 등록 · 견적 제안 · 매출 관리</span>
+            </div>
+            <div class="lt-arrow">→</div>
+          </button>
+          <button class="login-type-btn" data-role="contractor">
+            <div class="lt-icon">🔧</div>
+            <div class="lt-text">
+              <strong>시공사</strong>
+              <span>견적 수주 · 시공 일정 · 리뷰 관리</span>
+            </div>
+            <div class="lt-arrow">→</div>
+          </button>
+        </div>
+        <p class="modal-footer-note">구매자라면? <a href="#">구매자로 시작하기</a></p>
+      </div>
+
+      <!-- 로그인 폼 -->
+      <div class="modal-form hidden" id="modalForm">
+        <button class="modal-back" id="modalBack">← 뒤로</button>
+        <div class="modal-logo">
+          <img src="logo.png" alt="잔디박사" />
+          <span>잔디박사</span>
+        </div>
+        <div class="modal-role-badge" id="modalRoleBadge"></div>
+        <h2 id="modalFormTitle">로그인</h2>
+
+        <div class="tab-row">
+          <button class="tab-btn active" data-tab="login">로그인</button>
+          <button class="tab-btn" data-tab="signup">회원가입</button>
+        </div>
+
+        <!-- 로그인 탭 -->
+        <form class="auth-form" id="loginForm">
+          <div class="form-group">
+            <label>이메일</label>
+            <input type="email" placeholder="example@jandidoctor.kr" required />
+          </div>
+          <div class="form-group">
+            <label>비밀번호</label>
+            <div class="pw-wrap">
+              <input type="password" id="loginPw" placeholder="비밀번호 입력" required />
+              <button type="button" class="pw-toggle" data-target="loginPw">보기</button>
+            </div>
+          </div>
+          <div class="form-options">
+            <label class="checkbox-label">
+              <input type="checkbox" /> 자동 로그인
+            </label>
+            <a href="#" class="link-sm">비밀번호 찾기</a>
+          </div>
+          <button type="submit" class="btn-primary btn-full">로그인</button>
+          <div class="divider"><span>또는</span></div>
+          <button type="button" class="btn-social kakao">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.48 3 2 6.48 2 10.8c0 2.72 1.6 5.12 4 6.56L5 21l4.4-2.88c.84.16 1.72.24 2.6.24 5.52 0 10-3.48 10-7.8S17.52 3 12 3z"/></svg>
+            카카오로 로그인
+          </button>
+          <button type="button" class="btn-social naver">
+            <span style="font-weight:900;font-size:15px;">N</span>
+            네이버로 로그인
+          </button>
+        </form>
+
+        <!-- 회원가입 탭 -->
+        <form class="auth-form hidden" id="signupForm">
+          <div class="form-group">
+            <label>상호명 / 업체명</label>
+            <input type="text" placeholder="예: (주)그린잔디" required />
+          </div>
+          <div class="form-group">
+            <label>사업자등록번호</label>
+            <input type="text" placeholder="000-00-00000" required />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>담당자 이름</label>
+              <input type="text" placeholder="홍길동" required />
+            </div>
+            <div class="form-group">
+              <label>연락처</label>
+              <input type="tel" placeholder="010-0000-0000" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>이메일</label>
+            <input type="email" placeholder="example@company.kr" required />
+          </div>
+          <div class="form-group">
+            <label>비밀번호</label>
+            <div class="pw-wrap">
+              <input type="password" id="signupPw" placeholder="8자 이상" required />
+              <button type="button" class="pw-toggle" data-target="signupPw">보기</button>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>활동 지역</label>
+            <select>
+              <option value="">전국</option>
+              <option>서울/경기</option>
+              <option>인천</option>
+              <option>강원</option>
+              <option>충청</option>
+              <option>전라</option>
+              <option>경상</option>
+              <option>제주</option>
+            </select>
+          </div>
+          <label class="checkbox-label terms">
+            <input type="checkbox" required />
+            <span><a href="#">이용약관</a> 및 <a href="#">개인정보처리방침</a>에 동의합니다</span>
+          </label>
+          <button type="submit" class="btn-primary btn-full">회원가입 신청</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
