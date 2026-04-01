@@ -85,6 +85,7 @@ const modalFormTitle = document.getElementById('modalFormTitle');
 
 const roleLabel = { buyer: '구매자', seller: '판매자', contractor: '시공사' };
 const roleIcon  = { buyer: '🏠', seller: '🏢', contractor: '🔧' };
+let currentRole = 'buyer';
 
 function openModal() {
   loginModal.classList.add('open');
@@ -120,9 +121,6 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal()
 document.querySelectorAll('.login-type-btn').forEach(btn => {
   btn.addEventListener('click', () => showForm(btn.dataset.role));
 });
-
-// 현재 역할 저장
-let currentRole = 'buyer';
 
 // 탭 전환 (역할에 따라 다른 회원가입 폼 표시)
 function switchTab(tab) {
