@@ -1074,6 +1074,7 @@ body {
   font-weight: 700;
   margin-bottom: 10px;
 }
+.modal-role-badge.buyer { background: #FFF7ED; color: #C2410C; }
 .modal-role-badge.seller  { background: #EFF6FF; color: #1D4ED8; }
 .modal-role-badge.contractor { background: var(--green-50); color: var(--green-700); }
 

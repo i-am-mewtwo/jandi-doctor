@@ -83,8 +83,8 @@ const modalBack    = document.getElementById('modalBack');
 const modalRoleBadge = document.getElementById('modalRoleBadge');
 const modalFormTitle = document.getElementById('modalFormTitle');
 
-const roleLabel = { seller: '판매자', contractor: '시공사' };
-const roleIcon  = { seller: '🏢', contractor: '🔧' };
+const roleLabel = { buyer: '구매자', seller: '판매자', contractor: '시공사' };
+const roleIcon  = { buyer: '🏠', seller: '🏢', contractor: '🔧' };
 
 function openModal() {
   loginModal.classList.add('open');
@@ -100,6 +100,7 @@ function showSelect() {
   modalForm.classList.add('hidden');
 }
 function showForm(role) {
+  currentRole = role;
   modalSelect.classList.add('hidden');
   modalForm.classList.remove('hidden');
   modalRoleBadge.textContent = `${roleIcon[role]} ${roleLabel[role]}`;
@@ -120,11 +121,16 @@ document.querySelectorAll('.login-type-btn').forEach(btn => {
   btn.addEventListener('click', () => showForm(btn.dataset.role));
 });
 
-// 탭 전환
+// 현재 역할 저장
+let currentRole = 'buyer';
+
+// 탭 전환 (역할에 따라 다른 회원가입 폼 표시)
 function switchTab(tab) {
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === tab));
   document.getElementById('loginForm').classList.toggle('hidden', tab !== 'login');
-  document.getElementById('signupForm').classList.toggle('hidden', tab !== 'signup');
+  const isBuyer = currentRole === 'buyer';
+  document.getElementById('buyerSignupForm').classList.toggle('hidden', !(tab === 'signup' && isBuyer));
+  document.getElementById('bizSignupForm').classList.toggle('hidden', !(tab === 'signup' && !isBuyer));
 }
 document.querySelectorAll('.tab-btn').forEach(btn => {
   btn.addEventListener('click', () => switchTab(btn.dataset.tab));
@@ -152,8 +158,20 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
   }, 1000);
 });
 
-// 회원가입 제출
-document.getElementById('signupForm').addEventListener('submit', function(e) {
+// 구매자 회원가입 제출
+document.getElementById('buyerSignupForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const btn = this.querySelector('button[type="submit"]');
+  btn.textContent = '처리 중...'; btn.disabled = true;
+  setTimeout(() => {
+    btn.textContent = '✓ 가입 완료! 환영합니다 🎉';
+    btn.style.background = '#40916C';
+    setTimeout(() => { closeModal(); btn.textContent = '회원가입'; btn.style.background = ''; btn.disabled = false; this.reset(); }, 2000);
+  }, 1000);
+});
+
+// 판매자/시공사 회원가입 제출
+document.getElementById('bizSignupForm').addEventListener('submit', function(e) {
   e.preventDefault();
   const btn = this.querySelector('button[type="submit"]');
   btn.textContent = '처리 중...'; btn.disabled = true;

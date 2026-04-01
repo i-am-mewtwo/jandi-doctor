@@ -534,6 +534,14 @@
         <h2>어떤 유형으로<br/>로그인하시겠어요?</h2>
         <p>계정 유형에 맞는 대시보드로 연결됩니다.</p>
         <div class="login-type-btns">
+          <button class="login-type-btn" data-role="buyer">
+            <div class="lt-icon">🏠</div>
+            <div class="lt-text">
+              <strong>구매자</strong>
+              <span>견적 요청 · 시공사 비교 · 리뷰 작성</span>
+            </div>
+            <div class="lt-arrow">→</div>
+          </button>
           <button class="login-type-btn" data-role="seller">
             <div class="lt-icon">🏢</div>
             <div class="lt-text">
@@ -551,7 +559,6 @@
             <div class="lt-arrow">→</div>
           </button>
         </div>
-        <p class="modal-footer-note">구매자라면? <a href="#">구매자로 시작하기</a></p>
       </div>
 
       <!-- 로그인 폼 -->
@@ -600,8 +607,60 @@
           </button>
         </form>
 
-        <!-- 회원가입 탭 -->
-        <form class="auth-form hidden" id="signupForm">
+        <!-- 회원가입 탭 — 구매자 -->
+        <form class="auth-form hidden" id="buyerSignupForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label>이름</label>
+              <input type="text" placeholder="홍길동" required />
+            </div>
+            <div class="form-group">
+              <label>연락처</label>
+              <input type="tel" placeholder="010-0000-0000" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>이메일</label>
+            <input type="email" placeholder="example@email.com" required />
+          </div>
+          <div class="form-group">
+            <label>비밀번호</label>
+            <div class="pw-wrap">
+              <input type="password" id="buyerSignupPw" placeholder="8자 이상" required />
+              <button type="button" class="pw-toggle" data-target="buyerSignupPw">보기</button>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>주요 관심 목적 <span class="label-optional">(선택)</span></label>
+            <select>
+              <option value="">선택해 주세요</option>
+              <option>축구장 / 풋살장</option>
+              <option>골프 퍼팅그린</option>
+              <option>어린이 놀이터</option>
+              <option>주택 정원</option>
+              <option>학교 운동장</option>
+              <option>상업공간 조경</option>
+              <option>기타</option>
+            </select>
+          </div>
+          <label class="checkbox-label terms">
+            <input type="checkbox" required />
+            <span><a href="#">이용약관</a> 및 <a href="#">개인정보처리방침</a>에 동의합니다</span>
+          </label>
+          <button type="submit" class="btn-primary btn-full">회원가입</button>
+          <div class="divider"><span>또는</span></div>
+          <button type="button" class="btn-social kakao">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.48 3 2 6.48 2 10.8c0 2.72 1.6 5.12 4 6.56L5 21l4.4-2.88c.84.16 1.72.24 2.6.24 5.52 0 10-3.48 10-7.8S17.52 3 12 3z"/></svg>
+            카카오로 가입
+          </button>
+          <button type="button" class="btn-social naver">
+            <span style="font-weight:900;font-size:15px;">N</span>
+            네이버로 가입
+          </button>
+        </form>
+
+        <!-- 회원가입 탭 — 판매자 / 시공사 -->
+        <form class="auth-form hidden" id="bizSignupForm">
           <div class="form-group">
             <label>상호명 / 업체명</label>
             <input type="text" placeholder="예: (주)그린잔디" required />
